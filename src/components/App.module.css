@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.phonebook {
+    width: 300px;
+  background-color: rgb(65, 60, 52);
+  border-radius: 5px;
+}
+
+.titlePhonebook {
+  color: blanchedalmond;
+  text-align: center;
+}
+
+.contacts {
+    width: 300px;
+  background-color: blanchedalmond;
+  border-radius: 5px;
+}
+.titleContacts {
+  color: rgb(65, 60, 52);
+  text-align: center;
+}
