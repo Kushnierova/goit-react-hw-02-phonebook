@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  color: bisque;
+}
+.btn {
+  width: 100px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: bisque;
+  border-radius: 5px;
+  border: 1px rgb(255, 213, 161);
+}

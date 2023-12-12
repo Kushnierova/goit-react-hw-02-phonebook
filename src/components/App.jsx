@@ -2,6 +2,8 @@ import { Component } from 'react';
 // import { nanoid } from 'nanoid';
 import css from './App.module.css';
 
+import ContactForm from './ContactForm';
+
 export class App extends Component {
   state = {
     contacts: [],
@@ -13,7 +15,7 @@ export class App extends Component {
       <div className={css.container}>
         <div className={css.phonebook}>
           <h1 className={css.titlePhonebook}>Phonebook</h1>
-          {/* <ContactForm ... /> */}
+          <ContactForm />
         </div>
         <div className={css.contacts}>
           <h2 className={css.titleContacts}>Contacts</h2>
