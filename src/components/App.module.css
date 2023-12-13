@@ -6,7 +6,7 @@
 }
 
 .phonebook {
-    width: 300px;
+  width: 300px;
   background-color: rgb(65, 60, 52);
   border-radius: 5px;
 }
@@ -17,7 +17,8 @@
 }
 
 .contacts {
-    width: 300px;
+  width: 300px;
+  min-height: 200px;
   background-color: blanchedalmond;
   border-radius: 5px;
 }

@@ -10,12 +10,16 @@ export class App extends Component {
     name: '',
   };
 
+  formSubmitHandler = data => {
+    console.log(data);
+  };
+
   render() {
     return (
       <div className={css.container}>
         <div className={css.phonebook}>
           <h1 className={css.titlePhonebook}>Phonebook</h1>
-          <ContactForm />
+          <ContactForm onSubmit={this.formSubmitHandler} />
         </div>
         <div className={css.contacts}>
           <h2 className={css.titleContacts}>Contacts</h2>
