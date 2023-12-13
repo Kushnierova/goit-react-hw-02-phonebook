@@ -5,10 +5,11 @@ import css from './App.module.css';
 import ContactForm from './ContactForm';
 
 export class App extends Component {
-  state = {
-    contacts: [],
-    name: '',
-  };
+  // state = {
+  //   contacts: [
+  //   ],
+  //   name: '',
+  // };
 
   formSubmitHandler = data => {
     console.log(data);
