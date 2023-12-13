@@ -31,8 +31,22 @@ export class App extends Component {
     ],
   };
 
-  formSubmitHandler = data => {
-    console.log(data);
+  formSubmitHandler = (id, name, number) => {
+    if (this.checkName(name)) {
+      console.log(id, name, number);
+      this.state.contacts.push({ id, name, number });
+      this.setState(prevState => ({
+        contacts: prevState.contacts,
+      }));
+    }
+  };
+
+  checkName = name => {
+    if (this.state.contacts.find(contact => contact.name === name)) {
+      alert(`${name}is already in contacts`);
+      return false;
+    }
+    return true;
   };
 
   render() {

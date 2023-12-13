@@ -4,10 +4,11 @@ import css from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
-    contacts: [],
     name: '',
     number: '',
   };
+
+  onSubmit = this.props.onSubmit;
 
   nameInputId = nanoid();
   numberInputId = nanoid();
