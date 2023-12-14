@@ -23,7 +23,7 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.onSubmit(this.state);
+    this.props.onSubmit(this.state.name, this.state.number);
     this.reset();
   };
 
@@ -32,8 +32,7 @@ class ContactForm extends Component {
   };
 
   render() {
-    const { name } = this.state;
-    const { number } = this.state;
+    const { name, number } = this.state;
     return (
       <form className={css.form} onSubmit={this.handleSubmit}>
         <label className={css.label} htmlFor={this.nameInputId}>

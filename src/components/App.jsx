@@ -1,5 +1,5 @@
 import { Component } from 'react';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 import css from './App.module.css';
 
 import ContactForm from './ContactForm';
@@ -10,43 +10,37 @@ export class App extends Component {
     contacts: [
       {
         id: '1',
-        name: 'Rosie Simpson',
+        name: 'Harry Potter',
         number: '459-12-56',
       },
       {
         id: '2',
-        name: 'Hermione Kline',
+        name: 'Hermione Granger',
         number: '443-89-12',
       },
       {
         id: '3',
-        name: 'Eden Clements',
+        name: 'Ronald Weasley',
         number: '645-17-79',
       },
       {
         id: '4',
-        name: 'Annie Copeland',
+        name: 'Luna Lovegood',
         number: '227-91-26',
       },
     ],
   };
 
-  formSubmitHandler = (id, name, number) => {
-    if (this.checkName(name)) {
-      console.log(id, name, number);
-      this.state.contacts.push({ id, name, number });
-      this.setState(prevState => ({
-        contacts: prevState.contacts,
-      }));
-    }
-  };
+  addContact = (name, number) => {
+    const contact = {
+      id: nanoid(),
+      name,
+      number,
+    };
 
-  checkName = name => {
-    if (this.state.contacts.find(contact => contact.name === name)) {
-      alert(`${name}is already in contacts`);
-      return false;
-    }
-    return true;
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
   };
 
   render() {
@@ -55,7 +49,7 @@ export class App extends Component {
       <div className={css.container}>
         <div className={css.phonebook}>
           <h1 className={css.titlePhonebook}>Phonebook</h1>
-          <ContactForm onSubmit={this.formSubmitHandler} />
+          <ContactForm onSubmit={this.addContact} />
         </div>
         <div className={css.contacts}>
           <h2 className={css.titleContacts}>Contacts</h2>
