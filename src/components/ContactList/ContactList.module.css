@@ -1,9 +1,36 @@
-.contacts{
-    color: rgb(65, 60, 52);
+.items {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  padding-left: 20px;
+  margin: 0;
 }
-.item{
-    color: rgb(65, 60, 52);
+.item {
+  color: rgb(65, 60, 52);
+  display: flex;
+  flex-direction: row;
+  height: 40px;
 }
-.names{
-    font-weight: 600;
+.contacts {
+  color: rgb(65, 60, 52);
+  margin: auto;
+}
+.names {
+  font-weight: 600;
+}
+.btn {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  margin: auto;
+  border: 1px solid rgb(65, 60, 52);
+}
+
+.btn:hover,
+.btn.focus {
+  background-color: rgb(245, 158, 158);
+  border: 2px solid rgb(255, 70, 70);
 }

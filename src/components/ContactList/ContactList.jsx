@@ -2,7 +2,7 @@ import React from 'react';
 import css from './ContactList.module.css';
 
 const ContactList = ({ contacts, onDeleteContact }) => (
-  <ul>
+  <ul className={css.items}>
     {contacts.map(({ id, name, number }) => (
       <li key={id} className={css.item}>
         <p className={css.contacts}>
@@ -14,7 +14,7 @@ const ContactList = ({ contacts, onDeleteContact }) => (
           className={css.btn}
           onClick={() => onDeleteContact(id)}
         >
-          Delete
+          🗑
         </button>
       </li>
     ))}

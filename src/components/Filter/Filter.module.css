@@ -1,5 +1,6 @@
 .label {
-  margin-left: 25px;
+display: flex;
+justify-content: center;
 }
 .filter {
   background-color: transparent;
