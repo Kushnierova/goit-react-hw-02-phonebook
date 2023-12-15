@@ -5,10 +5,15 @@ justify-content: center;
 .filter {
   background-color: transparent;
   color: rgb(65, 60, 52);
-  border: 1px solid rgb(65, 60, 52);
+  border: 2px solid rgb(65, 60, 52);
   border-radius: 5px;
   height: 20px;
 }
 .filter::placeholder {
   color: rgb(65, 60, 52);
+
+}
+.filter:hover,
+filter:focus {
+background-color: rgb(239, 233, 225);
 }
