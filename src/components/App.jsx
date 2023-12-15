@@ -4,6 +4,7 @@ import css from './App.module.css';
 
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
+import Filter from './Filter';
 
 export class App extends Component {
   state = {
@@ -29,6 +30,7 @@ export class App extends Component {
         number: '227-91-26',
       },
     ],
+    filter: '',
   };
 
   addContact = (name, number) => {
@@ -43,8 +45,22 @@ export class App extends Component {
     }));
   };
 
+  changeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
+  };
+
+  getVisibleContacts = () => {
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
+  };
+
   render() {
-    const { contacts } = this.state;
+    const { contacts, filter } = this.state;
+    const visibleContacts = this.getVisibleContacts();
     return (
       <div className={css.container}>
         <div className={css.phonebook}>
@@ -53,8 +69,8 @@ export class App extends Component {
         </div>
         <div className={css.contacts}>
           <h2 className={css.titleContacts}>Contacts</h2>
-          {/* <Filter ... /> */}
-          <ContactList contacts={contacts} />
+          <Filter value={filter} onChange={this.changeFilter} />
+          <ContactList contacts={visibleContacts} />
         </div>
       </div>
     );

@@ -1,0 +1,13 @@
+.label {
+  margin-left: 25px;
+}
+.filter {
+  background-color: transparent;
+  color: rgb(65, 60, 52);
+  border: 1px solid rgb(65, 60, 52);
+  border-radius: 5px;
+  height: 20px;
+}
+.filter::placeholder {
+  color: rgb(65, 60, 52);
+}
